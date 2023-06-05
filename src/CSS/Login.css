@@ -1,0 +1,734 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+.Loginn input {
+  font-family: "Poppins", sans-serif;
+}
+
+.Loginn .container {
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.Loginn .forms-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.Loginn .signin-signup {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 75%;
+  width: 50%;
+  transition: 1s 0.7s ease-in-out;
+  display: grid;
+  grid-template-columns: 1fr;
+  z-index: 5;
+}
+
+.Loginn form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0rem 5rem;
+  transition: all 0.2s 0.7s;
+  overflow: hidden;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.Loginn form.sign-up-form {
+  opacity: 0;
+  z-index: 1;
+}
+
+.Loginn form.sign-in-form {
+  z-index: 2;
+}
+
+.Loginn .title {
+  font-size: 2.2rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.Loginn .input-field {
+  max-width: 380px;
+  width: 100%;
+  background-color: #f0f0f0;
+  margin: 10px 0;
+  height: 55px;
+  border-radius: 55px;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  padding: 0 0.4rem;
+  position: relative;
+}
+
+.Loginn .input-field i {
+  text-align: center;
+  line-height: 55px;
+  color: #acacac;
+  transition: 0.5s;
+  font-size: 1.1rem;
+}
+
+.Loginn .input-field input {
+  background: none;
+  outline: none;
+  border: none;
+  line-height: 1;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.Loginn .input-field input::placeholder {
+  color: #aaa;
+  font-weight: 500;
+}
+
+.Loginn .social-text {
+  padding: 0.7rem 0;
+  font-size: 1rem;
+}
+
+.Loginn .social-media {
+  display: flex;
+  justify-content: center;
+}
+
+.Loginn .social-icon {
+  height: 46px;
+  width: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.45rem;
+  color: #333;
+  border-radius: 50%;
+  border: 1px solid #333;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
+
+.Loginn .social-icon:hover {
+  color: #4481eb;
+  border-color: #4481eb;
+}
+
+.Loginn .btn {
+  width: 150px;
+  background-color: #edd107;
+  border: none;
+  outline: none;
+  height: 49px;
+  border-radius: 49px;
+  color: black;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: 0.5s;
+  /* margin-top: 2rem; */
+}
+
+.Loginn .btn:hover {
+  background-color: #4d84e2;
+}
+.Loginn .panels-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.Loginn .container:before {
+  content: "";
+  position: absolute;
+  height: 2000px;
+  width: 2000px;
+  top: -10%;
+  right: 48%;
+  transform: translateY(-50%);
+  /* background-image: linear-gradient(-45deg, #4481eb 0%, #04befe 100%); */
+  background-color: #000067;
+
+  transition: 1.8s ease-in-out;
+  border-radius: 50%;
+  z-index: 6;
+}
+
+.Loginn .image {
+  width: 100%;
+  transition: transform 1.1s ease-in-out;
+  transition-delay: 0.4s;
+}
+
+.Loginn .panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  text-align: center;
+  z-index: 6;
+}
+
+.Loginn .left-panel {
+  pointer-events: all;
+  padding: 3rem 17% 2rem 12%;
+}
+
+.Loginn .right-panel {
+  pointer-events: none;
+  padding: 3rem 12% 2rem 17%;
+}
+
+.Loginn .panel .content {
+  color: #fff;
+  transition: transform 0.9s ease-in-out;
+  transition-delay: 0.6s;
+}
+
+.Loginn .panel h3 {
+  font-weight: 600;
+  line-height: 1;
+  font-size: 1rem;
+}
+
+.Loginn .panel p {
+  font-size: 0.95rem;
+  padding: 0.7rem 0;
+}
+
+.Loginn .btn.transparent {
+  margin: 0;
+  background: #000067;
+  color: #edd107;
+  border: 2px solid #edd107;
+  width: 130px;
+  height: 41px;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.right-panel .image,
+.Loginn .right-panel .content {
+  transform: translateX(800px);
+}
+
+/* ANIMATION */
+
+.Loginn .container.sign-up-mode:before {
+  transform: translate(100%, -50%);
+  right: 52%;
+}
+
+.container.sign-up-mode .left-panel .image,
+.Loginn .container.sign-up-mode .left-panel .content {
+  transform: translateX(-800px);
+}
+
+.Loginn .container.sign-up-mode .signin-signup {
+  left: 25%;
+}
+
+.Loginn .container.sign-up-mode form.sign-up-form {
+  opacity: 1;
+  z-index: 2;
+}
+
+.Loginn .container.sign-up-mode form.sign-in-form {
+  opacity: 0;
+  z-index: 1;
+}
+
+.container.sign-up-mode .right-panel .image,
+.Loginn .container.sign-up-mode .right-panel .content {
+  transform: translateX(0%);
+}
+
+.Loginn .container.sign-up-mode .left-panel {
+  pointer-events: none;
+}
+
+.Loginn .container.sign-up-mode .right-panel {
+  pointer-events: all;
+}
+#sign-in-btn,
+.Loginn #sign-up-btn {
+  margin-top: 1rem;
+}
+
+@media (max-width: 870px) {
+  .Loginn .input-field {
+    max-width: 400px;
+    width: 100%;
+    background-color: #f0f0f0;
+    margin: 10px 0;
+    height: 40px;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+    position: relative;
+  }
+
+  .Loginn .input-field i {
+    text-align: center;
+    line-height: 55px;
+    color: #acacac;
+    transition: 0.5s;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  .Loginn .input-field input {
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+    padding-bottom: 10px;
+  }
+
+  .Loginn .input-field input::placeholder {
+    color: #aaa;
+    font-weight: 500;
+  }
+
+  .Loginn .container {
+    min-height: 800px;
+    height: 100vh;
+  }
+  .Loginn .signin-signup {
+    width: 100%;
+    top: 95%;
+    transform: translate(-50%, -100%);
+    transition: 1s 0.8s ease-in-out;
+  }
+
+  .signin-signup,
+  .Loginn .container.sign-up-mode .signin-signup {
+    left: 50%;
+  }
+
+  .Loginn .panels-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+  }
+
+  .Loginn .panel {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2.5rem 8%;
+    grid-column: 1 / 2;
+  }
+
+  .Loginn .right-panel {
+    grid-row: 3 / 4;
+  }
+
+  .Loginn .left-panel {
+    grid-row: 1 / 2;
+  }
+
+  .Loginn .image {
+    width: 200px;
+    transition: transform 0.9s ease-in-out;
+    transition-delay: 0.6s;
+  }
+
+  .Loginn .panel .content {
+    padding-right: 15%;
+    transition: transform 0.9s ease-in-out;
+    transition-delay: 0.8s;
+  }
+
+  .Loginn .panel h3 {
+    font-size: 1 rem;
+  }
+
+  .Loginn .panel p {
+    font-size: 0.7rem;
+    padding: 0.5rem 0;
+  }
+
+  .Loginn .btn.transparent {
+    width: 110px;
+    height: 35px;
+    font-size: 0.7rem;
+  }
+
+  .Loginn .container:before {
+    width: 1500px;
+    height: 1500px;
+    transform: translateX(-50%);
+    left: 30%;
+    bottom: 68%;
+    right: initial;
+    top: initial;
+    transition: 2s ease-in-out;
+  }
+
+  .Loginn .container.sign-up-mode:before {
+    transform: translate(-50%, 100%);
+    bottom: 32%;
+    right: initial;
+  }
+
+  .container.sign-up-mode .left-panel .image,
+  .Loginn .container.sign-up-mode .left-panel .content {
+    transform: translateY(-300px);
+  }
+
+  .container.sign-up-mode .right-panel .image,
+  .Loginn .container.sign-up-mode .right-panel .content {
+    transform: translateY(0px);
+  }
+
+  .right-panel .image,
+  .Loginn .right-panel .content {
+    transform: translateY(300px);
+  }
+
+  .Loginn .container.sign-up-mode .signin-signup {
+    top: 5%;
+    transform: translate(-50%, 0);
+  }
+}
+.Loginn h1 {
+  display: inline;
+  margin-top: 8.8%;
+  margin-left: 15px;
+}
+.Loginn .logoimg {
+  display: flex;
+  margin-left: 100px;
+}
+.Loginn img {
+  width: 18.75rem;
+  height: 5.625;
+}
+
+@media (max-width: 650px) {
+  .Loginn img {
+    width: 12.5rem;
+    height: 3.75rem;
+  }
+  .Loginn .logoimg {
+    width: 50px;
+    height: 50px;
+    margin-top: -1.25rem;
+    margin-left: 6.25rem;
+  }
+  .Loginn .logoimg h1 {
+    font-size: 1.5 rem;
+    padding-top: 0.625rem;
+  }
+
+  .Loginn .content h3 {
+    margin-left: 50px;
+  }
+
+  .Loginn p {
+    margin-top: 1.2rem;
+    margin-left: 4.375rem;
+  }
+  .Loginn #sign-up-btn {
+    margin-top: 2%;
+    margin-left: 3.125rem;
+  }
+  .Loginn h1 {
+    margin-left: 0.75rem;
+  }
+
+  .Loginn form {
+    padding: 0 1.5rem;
+  }
+
+  .Loginn .image {
+    display: none;
+  }
+  .Loginn /* .panel .content {
+    padding: 0.5rem 1rem;
+  } */
+  .Loginn .container {
+    padding: 1.5rem;
+  }
+
+  .Loginn .container:before {
+    bottom: 72%;
+    left: 50%;
+  }
+
+  .Loginn .container.sign-up-mode:before {
+    bottom: 28%;
+    left: 50%;
+  }
+
+  .Loginn .input-field {
+    max-width: 400px;
+    width: 100%;
+    background-color: #f0f0f0;
+    margin: 10px 0;
+    height: 40px;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+    position: relative;
+  }
+
+  .Loginn .input-field i {
+    text-align: center;
+    line-height: 55px;
+    color: #acacac;
+    transition: 0.5s;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  .Loginn .input-field input {
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+    padding-bottom: 10px;
+  }
+
+  .Loginn .input-field input::placeholder {
+    color: #aaa;
+    font-weight: 500;
+  }
+}
+
+/* 470 small screen */
+
+@media (max-width: 470px) {
+  .Loginn .right-panel {
+    transform: translateY(1.25rem);
+  }
+  .Loginn img {
+    width: 12.5rem;
+    height: 3.75rem;
+  }
+  .Loginn /* .logoimg {
+    width: 50px;
+    height: 50px;
+    margin-top: -1.5rem;
+    margin-left: 3rem;
+    margin-right: 5rem;
+    padding-top: 10px;
+  }
+  .Loginn .logoimg h1 {
+    font-size: 1.5 rem;
+    padding-top: 0.625rem;
+  } */
+
+  .Loginn .content h3 {
+    margin-left: 50px;
+  }
+
+  .Loginn p {
+    margin-top: 1.2rem;
+    margin-left: 4.375rem;
+  }
+  .Loginn #sign-up-btn {
+    margin-top: 2%;
+    margin-left: 3.125rem;
+  }
+  .Loginn h1 {
+    margin-left: 0.75rem;
+  }
+
+  .Loginn form {
+    padding: 0 1.5rem;
+  }
+
+  .Loginn .image {
+    display: none;
+  }
+  .Loginn /* .panel .content {
+    padding: 0.5rem 1rem;
+  } */
+  .Loginn .container {
+    padding: 1.5rem;
+  }
+
+  .Loginn .container:before {
+    bottom: 72%;
+    left: 50%;
+  }
+
+  .Loginn .container.sign-up-mode:before {
+    bottom: 28%;
+    left: 50%;
+  }
+
+  .Loginn .input-field {
+    max-width: 400px;
+    width: 100%;
+    background-color: #f0f0f0;
+    margin: 10px 0;
+    height: 40px;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+    position: relative;
+  }
+
+  .Loginn .input-field i {
+    text-align: center;
+    line-height: 55px;
+    color: #acacac;
+    transition: 0.5s;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  .Loginn .input-field input {
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+    padding-bottom: 10px;
+  }
+
+  .Loginn .input-field input::placeholder {
+    color: #aaa;
+    font-weight: 500;
+  }
+}
+
+/* 320 px */
+
+@media (max-width: 320px) {
+  .Loginn img {
+    width: 12.5/2rem;
+    height: 3.75/2rem;
+  }
+
+  .Loginn .logoimg {
+    width: 40px;
+    height: 40px;
+    margin-top: -2rem;
+    padding-top: 22px;
+    margin-left: 3rem;
+    margin-right: 5rem;
+  }
+
+  .Loginn .content h3 {
+    margin-left: 50px;
+    font-size: 0.9rem;
+  }
+
+  .Loginn p {
+    margin-top: 1.9rem;
+    margin-left: 4.375rem;
+  }
+  .Loginn #sign-up-btn {
+    margin-top: 2%;
+    margin-left: 3.125rem;
+  }
+  .Loginn h1 {
+    margin-left: 0.75rem;
+  }
+
+  .Loginn form {
+    padding: 0 1.5rem;
+  }
+
+  .Loginn .image {
+    display: none;
+  }
+  .Loginn /* .panel .content {
+    padding: 0.5rem 1rem;
+  } */
+  .Loginn .container {
+    padding: 1.5rem;
+  }
+
+  .Loginn .container:before {
+    bottom: 72%;
+    left: 50%;
+  }
+
+  .Loginn .container.sign-up-mode:before {
+    bottom: 28%;
+    left: 50%;
+  }
+
+  .Loginn .input-field {
+    max-width: 400px;
+    width: 100%;
+    background-color: #f0f0f0;
+    margin: 10px 0;
+    height: 40px;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+    position: relative;
+  }
+
+  .Loginn .input-field i {
+    text-align: center;
+    line-height: 55px;
+    color: #acacac;
+    transition: 0.5s;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  .Loginn .input-field input {
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+    padding-bottom: 10px;
+  }
+
+  .Loginn .input-field input::placeholder {
+    color: #aaa;
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 1030px) {
+  .Loginn .right-panel p {
+    transform: translateX(10px);
+  }
+}
