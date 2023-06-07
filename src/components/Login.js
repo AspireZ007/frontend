@@ -14,7 +14,7 @@ const Login = () => {
 
   return (
     <div className="Loginn">
-      <div className={`container ${isSignUpMode ? "sign-up-mode" : ""}`}>
+      <div className={`login-container ${isSignUpMode ? "sign-up-mode" : ""}`}>
         <div className="forms-container">
           <div className="signin-signup">
             <form action="#" className="sign-in-form">
@@ -101,6 +101,7 @@ const Login = () => {
                 href="learnmore.html"
                 style={{ color: "whitesmoke", fontSize: "small" }}
               >
+                <br/>
                 Learn More
               </a>
             </div>

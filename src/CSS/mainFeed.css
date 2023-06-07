@@ -1,0 +1,294 @@
+.main {
+    margin: 1rem 0;
+    position: relative;
+    min-height: 300vh;
+    width: 100%;
+    background: var(--bgBlueExtraLight);
+  }
+  
+  .main .container {
+    margin: 0 auto;
+    width: 45%;
+    min-height: inherit;
+    display: block;
+  }
+  
+  /* post  */
+  .main .container .post {
+    height: 14rem;
+    background: var(--bgWhite);
+    margin-top: 4rem;
+    padding: 2rem 1rem;
+    border-radius: 1rem;
+  }
+  
+  .main .container .post .content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+  }
+  .main .container .post .content .avatar {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+  }
+  .main .container .post .content .textBox {
+    flex: 1 1 70%;
+    background: var(--grey245);
+    border: none;
+    border-radius: 2rem;
+    height: 4rem;
+    font-size: 1.6rem;
+    color: var(--black80);
+    padding: 0 1rem;
+    outline: 0;
+  }
+  
+  .main .container .post .content .textBox:focus {
+    border: 0.1rem solid #EDD107;
+  }
+  
+  .main .container .post .features {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0 1%;
+    margin-top: 1rem;
+    border-top: 0.1rem solid var(--grey200);
+    padding-top: 1rem;
+  }
+  .main .container .post .features .feature {
+    cursor: pointer;
+    flex: 1 1 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 1%;
+    padding: 1rem 0;
+  }
+  .main .container .post .features .feature:hover {
+    background: var(--grey240);
+  }
+  .main .container .post .features .feature .icon {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--red200);
+  }
+  .main .container .post .features .feature:nth-child(2) .icon {
+    color: #000079;
+  }
+  .main .container .post .features .feature:nth-child(3) .icon {
+    color: var(--golden);
+  }
+  .main .container .post .features .feature .name {
+    font-size: 1.4rem;
+    color: var(--grey);
+  }
+  
+  /* .postPublished */
+  
+  .postPublished {
+    padding: 1rem;
+    background: var(--bgWhite);
+    margin-top: 2rem;
+    border-radius: 1rem;
+  }
+  
+  .postPublished .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: none;
+  }
+  .postPublished .top .user {
+    display: flex;
+    align-items: center;
+    gap: 0 2rem;
+  }
+  
+  .postPublished .top .user .avatar {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    border: 0.1rem solid #000079;
+    padding: 0.3rem;
+  }
+  
+  .postPublished .top .user .info .name {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--black20);
+  }
+  
+  .postPublished .top .user .info .name .icon {
+    color: var(--green150);
+    font-size: 1.4rem;
+  }
+  .postPublished .top .user .info .time {
+    color: var(--grey);
+    font-size: 1.2rem;
+  }
+  
+  .postPublished .actions .icon {
+    cursor: pointer;
+  }
+  .postPublished .content .text {
+    letter-spacing: 0px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--black50);
+    line-height: 2rem;
+    margin: 1.5rem 0;
+  }
+  
+  .postPublished .content .text .link {
+    color: #000079;
+    font-weight: 600;
+  }
+  .postPublished .content .img {
+    max-width: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+  .postPublished .bottom {
+    position: relative;
+  }
+  .postPublished .bottom .after {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 1rem;
+    border-bottom: 0.1rem solid var(--grey220);
+  }
+  .postPublished .bottom .after .likes {
+    color: var(--grey);
+    font-size: 1.4rem;
+    cursor: pointer;
+    border-bottom: 1px dashed transparent;
+  }
+  
+  .postPublished .bottom .after .likes:hover {
+    color: var(--black10);
+    border-bottom: 1px dashed var(--grey150);
+  }
+  
+  .postPublished .bottom .after .likes .icon {
+    color: #000079;
+  }
+  .postPublished .bottom .after .likes .icon:nth-child(2) {
+    color: var(--red200);
+  }
+  .postPublished .bottom .after .likes .icon:nth-child(3) {
+    color: var(--golden);
+  }
+  .postPublished .bottom .others {
+    display: flex;
+    flex-direction: row;
+    gap: 0 2rem;
+    font-size: 1.4rem;
+    color: var(--grey);
+  }
+  
+  .postPublished .bottom .others .box {
+    border-bottom: 0.1rem dashed transparent;
+    cursor: pointer;
+  }
+  
+  .postPublished .bottom .others .box:hover {
+    color: var(--black10);
+    border-bottom: 0.1rem dashed var(--grey);
+  }
+  .postPublished .bottom .before {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0 1%;
+  }
+  
+  .postPublished .bottom .before .box {
+    flex: 1 1 20%;
+    font-size: 1.4rem;
+    color: var(--black80);
+    cursor: pointer;
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0 0.5rem;
+    justify-content: center;
+    color: var(--grey150);
+  }
+  .postPublished .bottom .before .box:hover {
+    background: var(--grey);
+    color: var(--white);
+  }
+  .postPublished .bottom .before .box .avatar {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    object-position: top;
+    object-fit: cover;
+  }
+  .postPublished .bottom .before .box .icon {
+    font-size: 1.4rem;
+    color: var(--black80);
+  }
+  .postPublished .bottom .before .box:hover .icon {
+    font-size: 1.4rem;
+    color: var(--white);
+  }
+  /* .loadMore  */
+  .loadMore {
+    margin: 4rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .loadMore .icon {
+    font-size: 4rem;
+    color: #000079;
+    cursor: pointer;
+    animation-name: animateLoadMore;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes animateLoadMore {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .hidden-options{
+    display: none !important;
+  }
+  
+  @media  (max-width: 750px) {
+    .hidden-options{
+      display: block !important;
+    }
+  }
+  
+  .favourite-tab :hover{
+    background: #000079 !important;
+    color: var(--white) !important;
+  }
+  
+  .leftSidebar , .rightSidebar , .main , body{
+    background-color: #f0e5d0;
+  }
+  
+  .postPublished , .post{
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }

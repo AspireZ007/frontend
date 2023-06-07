@@ -1,0 +1,72 @@
+.toggle-switch-button {
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
+  background: #7B9EA8;
+  border-radius: 30px;
+  overflow: hidden;
+  width: 70vw;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: white;
+  position: relative;
+  padding-right: 35vw;
+  position: relative;
+}
+.toggle-switch-button:before {
+  content: "Explore";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 35vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  pointer-events: none;
+}
+.toggle-switch-button-checkbox {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 2;
+}
+.toggle-switch-button-checkbox:checked + .toggle-switch-button-label:before {
+  transform: translateX(35vw);
+  transition: transform 35 0ms linear;
+}
+.toggle-switch-button-checkbox + .toggle-switch-button-label {
+  position: relative;
+  padding: 15px 0;
+  display: block;
+  user-select: none;
+  pointer-events: none;
+}
+.toggle-switch-button-checkbox + .toggle-switch-button-label:before {
+  content: "";
+  background: rgb(21, 21, 100);
+  height: 112%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 30px;
+  transform: translateX(0);
+  transition: transform 300ms;
+}
+.toggle-switch-button-checkbox + .toggle-switch-button-label .toggle-switch-button-label-span {
+  position: relative;
+}
+
+.toggle-outer-div{
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

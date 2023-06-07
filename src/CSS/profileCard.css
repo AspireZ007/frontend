@@ -1,0 +1,66 @@
+.connections-card-container{
+	user-select: none;
+	margin: 30px 20px;
+	background: #0F0F43;
+	color: #b3b8cd;
+	border-radius: 15px;
+	width: 300px;
+	text-align: center;
+	box-shadow: 0 10px 20px -10px rgba(0,0,0,.75);
+  }
+  .connections-cover-photo{
+	background: url(https://images.unsplash.com/photo-1540228232483-1b64a7024923?ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80);
+	height: 110px;
+	width: 100%;
+	border-radius: 15px 15px 0 0;
+  }
+  .connections-profile{
+	height: 110px;
+	width: 110px;
+	border-radius: 50%;
+	margin: 63px 0 0 -175px;
+	border: 1px solid #7B9EA8;
+	padding: 5px;
+	background: #7B9EA8;
+  }
+  .connections-profile-name{
+	font-size: 25px;
+	font-weight: bold;
+	margin: 27px 0 0 100px;
+  }
+  .connections-about{
+	margin-top: 25px;
+	line-height: 21px;
+  }
+  .connections-button{
+	margin: 10px 0 30px 0;
+  }
+  .connections-msg-btn, .connections-follow-btn{
+	background: #7B9EA8;
+	border: 1px solid #7B9EA8;
+	padding: 10px 25px;
+	color: #0F0F43;
+	border-radius: 7px;
+	font-family: Montserrat, sans-serif;
+	cursor: pointer;
+  }
+  .connections-follow-btn{
+	margin-left: 10px;
+	background: transparent;
+	color: #7B9EA8;
+  }
+  .connections-follow-btn:hover{
+	color: #0F0F43;
+	background: #7B9EA8;
+	transition: .5s;
+  }
+  .connections-card-container i{
+	padding-left: 20px;
+	font-size: 20px;
+	margin-bottom: 20px;
+	cursor: pointer;
+	transition: .5s;
+  }
+  .connections-card-container i:hover{
+	color: #7B9EA8;
+  }

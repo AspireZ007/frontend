@@ -6,12 +6,12 @@
   box-sizing: border-box;
 }
 
-body,
+
 .Loginn input {
   font-family: "Poppins", sans-serif;
 }
 
-.Loginn .container {
+.Loginn .login-container {
   position: relative;
   width: 100%;
   background-color: #fff;
@@ -162,7 +162,7 @@ body,
   grid-template-columns: repeat(2, 1fr);
 }
 
-.Loginn .container:before {
+.Loginn .login-container:before {
   content: "";
   position: absolute;
   height: 2000px;
@@ -238,43 +238,43 @@ body,
 
 /* ANIMATION */
 
-.Loginn .container.sign-up-mode:before {
+.Loginn .login-container.sign-up-mode:before {
   transform: translate(100%, -50%);
   right: 52%;
 }
 
-.container.sign-up-mode .left-panel .image,
-.Loginn .container.sign-up-mode .left-panel .content {
+.login-container.sign-up-mode .left-panel .image,
+.Loginn .login-container.sign-up-mode .left-panel .content {
   transform: translateX(-800px);
 }
 
-.Loginn .container.sign-up-mode .signin-signup {
+.Loginn .login-container.sign-up-mode .signin-signup {
   left: 25%;
 }
 
-.Loginn .container.sign-up-mode form.sign-up-form {
+.Loginn .login-container.sign-up-mode form.sign-up-form {
   opacity: 1;
   z-index: 2;
 }
 
-.Loginn .container.sign-up-mode form.sign-in-form {
+.Loginn .login-container.sign-up-mode form.sign-in-form {
   opacity: 0;
   z-index: 1;
 }
 
-.container.sign-up-mode .right-panel .image,
-.Loginn .container.sign-up-mode .right-panel .content {
+.login-container.sign-up-mode .right-panel .image,
+.Loginn .login-container.sign-up-mode .right-panel .content {
   transform: translateX(0%);
 }
 
-.Loginn .container.sign-up-mode .left-panel {
+.Loginn .login-container.sign-up-mode .left-panel {
   pointer-events: none;
 }
 
-.Loginn .container.sign-up-mode .right-panel {
+.Loginn .login-container.sign-up-mode .right-panel {
   pointer-events: all;
 }
-#sign-in-btn,
+.loginn #sign-in-btn,
 .Loginn #sign-up-btn {
   margin-top: 1rem;
 }
@@ -318,7 +318,7 @@ body,
     font-weight: 500;
   }
 
-  .Loginn .container {
+  .Loginn .login-container {
     min-height: 800px;
     height: 100vh;
   }
@@ -329,8 +329,8 @@ body,
     transition: 1s 0.8s ease-in-out;
   }
 
-  .signin-signup,
-  .Loginn .container.sign-up-mode .signin-signup {
+  .loginn .signin-signup,
+  .Loginn .login-container.sign-up-mode .signin-signup {
     left: 50%;
   }
 
@@ -382,7 +382,7 @@ body,
     font-size: 0.7rem;
   }
 
-  .Loginn .container:before {
+  .Loginn .login-container:before {
     width: 1500px;
     height: 1500px;
     transform: translateX(-50%);
@@ -393,28 +393,28 @@ body,
     transition: 2s ease-in-out;
   }
 
-  .Loginn .container.sign-up-mode:before {
+  .Loginn .login-container.sign-up-mode:before {
     transform: translate(-50%, 100%);
     bottom: 32%;
     right: initial;
   }
 
-  .container.sign-up-mode .left-panel .image,
-  .Loginn .container.sign-up-mode .left-panel .content {
+  .loginn .login-container.sign-up-mode .left-panel .image,
+  .Loginn .login-container.sign-up-mode .left-panel .content {
     transform: translateY(-300px);
   }
 
-  .container.sign-up-mode .right-panel .image,
-  .Loginn .container.sign-up-mode .right-panel .content {
+  .loginn .login-container.sign-up-mode .right-panel .image,
+  .Loginn .login-container.sign-up-mode .right-panel .content {
     transform: translateY(0px);
   }
 
-  .right-panel .image,
+  .loginn .right-panel .image,
   .Loginn .right-panel .content {
     transform: translateY(300px);
   }
 
-  .Loginn .container.sign-up-mode .signin-signup {
+  .Loginn .login-container.sign-up-mode .signin-signup {
     top: 5%;
     transform: translate(-50%, 0);
   }
@@ -475,16 +475,16 @@ body,
   .Loginn /* .panel .content {
     padding: 0.5rem 1rem;
   } */
-  .Loginn .container {
+  .Loginn .login-container {
     padding: 1.5rem;
   }
 
-  .Loginn .container:before {
+  .Loginn .login-container:before {
     bottom: 72%;
     left: 50%;
   }
 
-  .Loginn .container.sign-up-mode:before {
+  .Loginn .login-container.sign-up-mode:before {
     bottom: 28%;
     left: 50%;
   }
@@ -538,19 +538,6 @@ body,
     width: 12.5rem;
     height: 3.75rem;
   }
-  .Loginn /* .logoimg {
-    width: 50px;
-    height: 50px;
-    margin-top: -1.5rem;
-    margin-left: 3rem;
-    margin-right: 5rem;
-    padding-top: 10px;
-  }
-  .Loginn .logoimg h1 {
-    font-size: 1.5 rem;
-    padding-top: 0.625rem;
-  } */
-
   .Loginn .content h3 {
     margin-left: 50px;
   }
@@ -577,16 +564,16 @@ body,
   .Loginn /* .panel .content {
     padding: 0.5rem 1rem;
   } */
-  .Loginn .container {
+  .Loginn .login-container {
     padding: 1.5rem;
   }
 
-  .Loginn .container:before {
+  .Loginn .login-container:before {
     bottom: 72%;
     left: 50%;
   }
 
-  .Loginn .container.sign-up-mode:before {
+  .Loginn .login-container.sign-up-mode:before {
     bottom: 28%;
     left: 50%;
   }
@@ -674,16 +661,16 @@ body,
   .Loginn /* .panel .content {
     padding: 0.5rem 1rem;
   } */
-  .Loginn .container {
+  .Loginn .login-container {
     padding: 1.5rem;
   }
 
-  .Loginn .container:before {
+  .Loginn .login-container:before {
     bottom: 72%;
     left: 50%;
   }
 
-  .Loginn .container.sign-up-mode:before {
+  .Loginn .login-container.sign-up-mode:before {
     bottom: 28%;
     left: 50%;
   }

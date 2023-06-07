@@ -1,0 +1,102 @@
+.feed-leftBar  .leftSidebar,
+.feed-leftBar  .rightSidebar {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    width: 20%;
+    height: calc(100vh - 60px);
+    position: fixed;
+    z-index: 99;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--black50);
+  }
+
+.feed-leftBar  .leftSidebar a,
+.feed-leftBar  .rightSidebar a {
+    color: inherit;
+  }
+.feed-leftBar  .leftSidebar {
+    left: 3%;
+    /* overflow: auto; */
+  }
+  /* Scrollbar */
+.feed-leftBar  .leftSidebar::-webkit-scrollbar,
+.feed-leftBar  .rightSidebar::-webkit-scrollbar {
+    width: 0.3rem;
+  }
+.feed-leftBar  .leftSidebar .row {
+    margin-bottom: 2rem;
+    padding-bottom: 4rem;
+    border-bottom: 0.1rem solid #000079;
+  }
+.feed-leftBar  .leftSidebar .row:last-child {
+    margin-bottom: 5rem;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+.feed-leftBar  .leftSidebar .row .boxTitle {
+    font-size: 1.6rem;
+    color: #000079;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+.feed-leftBar  .leftSidebar .row .boxTitle .icon {
+    cursor: pointer;
+    opacity: 0;
+  }
+
+.feed-leftBar  .leftSidebar .row .profile {
+    display: flex;
+    align-items: center;
+  }
+.feed-leftBar  .leftSidebar .row .profile .img {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    text-align: center;
+  }
+.feed-leftBar  .leftSidebar .row .profile .name {
+    margin-left: 2rem;
+  }
+
+.feed-leftBar  .leftSidebar .row .navLinks {
+    display: flex;
+    flex-direction: column;
+  }
+.feed-leftBar  .leftSidebar .row .navLinks .link {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+  }
+.feed-leftBar  .leftSidebar .row .navLinks .link .icon {
+    background: transparent;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    margin-right: 2rem;
+    font-size: 2rem;
+    color: #000079;
+  }
+.feed-leftBar  .leftSidebar .row .navLinks .link:last-child .icon {
+    background: #EDD107;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    color: var(--white);
+  }
+.feed-leftBar  .leftSidebar .row .navLinks .link .img {
+    width: 5rem;
+    height: 4rem;
+    margin-right: 2rem;
+    object-fit: cover;
+    border: 0.2rem solid #000079;
+    padding: 0.3rem;
+    border-radius: 1rem;
+  }

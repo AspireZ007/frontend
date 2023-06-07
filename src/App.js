@@ -6,6 +6,8 @@ import Courses from './components/Courses';
 import CourseDashboard from './components/CourseDashboard';
 import EnrollCourse from './components/EnrollCourse';
 import Login from './components/Login';
+import Connections from './components/Connections';
+// import Feed from './components/Feed';
 function App() {
 
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route exact path='/courses/:id' component={CourseDashboard} />
         <Route exact path='/enroll/courses/:id' component={EnrollCourse} />
         <Route exact path='/login' component={Login} />
+        <Route exact path='/connections' component={Connections} />
+        {/* <Route exact path='/feed' component={Feed} /> */}
       </Switch>
     </>
   );
