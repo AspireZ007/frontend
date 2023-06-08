@@ -9,7 +9,11 @@ const ContactList = ({ contacts }) => {
           <div className="about">
             <div className="name">{contact.name}</div>
             <div className="status">
-              <i className="fa fa-circle offline" /> {contact.status}
+              {contact.status === "online" ? (
+                <i className="fa fa-circle online" />
+              ) : (
+                <i className="fa fa-circle offline" />
+              )}{contact.status}
             </div>
           </div>
         </li>
