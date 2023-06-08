@@ -1,0 +1,13 @@
+.search-area-div{
+    display : flex ;
+    justify-content : center;
+    gap: 100px;
+    align-items : center;
+    padding-top : 15px;
+}
+@media screen and (max-width: 768px) {
+    .search-area-div{
+        flex-direction : column-reverse;
+        gap : 30px;
+    }
+}  

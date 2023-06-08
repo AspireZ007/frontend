@@ -62,6 +62,11 @@
 .toggle-switch-button-checkbox + .toggle-switch-button-label .toggle-switch-button-label-span {
   position: relative;
 }
+.toggle-switch-button-label-span{
+  font-size: 18px;
+  text-align: center;
+  margin-top: 4px;
+}
 
 .toggle-outer-div{
   padding: 20px;

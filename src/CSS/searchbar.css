@@ -1,0 +1,91 @@
+:root {
+    --rad: 8px;
+    --dur: .3s;
+    --color-dark: #2f2f2f;
+    --color-light: #fff;
+    --color-brand: #7B9EA8;
+    --font-fam: Montserrat, sans-serif;
+    --height: 40px;
+    --btn-width: 60px;
+    --bez: cubic-bezier(0, 0, 0.43, 1.49);
+  }
+  .community-search-form {
+    position: relative;
+    width: 300px;
+    background: var(--color-brand);
+    border-radius: var(--rad);
+    border: 1px solid #0F0F43;
+  }
+  .community-search-input, .community-search-button {
+    height: var(--height);
+    font-family: var(--font-fam);
+    border: 0;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .community-search-input{
+    color: var(--color-dark);
+  }
+  .community-search-button{
+    color: var(--color-light);
+  }
+  
+  .community-search-input[type=search] {
+    outline: 0;
+    width: 100%;
+    background: var(--color-light);
+    padding: 0 1.6rem;
+    border-radius: var(--rad);
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    transition: all var(--dur) var(--bez);
+    transition-property: width, border-radius;
+    z-index: 1;
+    position: relative;
+  }
+  
+  .community-search-button {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: var(--btn-width);
+    font-weight: bold;
+    background: var(--color-brand);
+    border-radius: 0 var(--rad) var(--rad) 0;
+  }
+  
+  .community-search-input:not(:-moz-placeholder-shown) {
+    border-radius: var(--rad) 0 0 var(--rad);
+    width: calc(100% - var(--btn-width));
+  }
+  
+  .community-search-input:not(:-ms-.community-search-input-placeholder) {
+    border-radius: var(--rad) 0 0 var(--rad);
+    width: calc(100% - var(--btn-width));
+  }
+  
+  .community-search-input:not(:placeholder-shown) {
+    border-radius: var(--rad) 0 0 var(--rad);
+    width: calc(100% - var(--btn-width));
+  }
+  .community-search-input:not(:-moz-placeholder-shown) + .community-search-button {
+    display: block;
+  }
+  .community-search-input:not(:-ms-.community-search-input-placeholder) + .community-search-button {
+    display: block;
+  }
+  .community-search-input:not(:placeholder-shown) + .community-search-button {
+    display: block;
+  }
+  
+  .community-search-label {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+  }
