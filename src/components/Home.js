@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 // import 'courses\src\CSS\CourseStyle.css'
 import '../CSS/CourseStyle.css'
@@ -219,11 +219,6 @@ const Register = () => {
             </div>
         </section>
 
-    );
-}
-const nav = () => {
-    return (
-        <nav></nav>
     );
 }
 const Footer = () => {

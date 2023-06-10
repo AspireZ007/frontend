@@ -1,20 +1,21 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import {Navigate} from 'react-router-dom';
+import { useState } from 'react';
 import '../CSS/CourseDescription.css';
-import { Link, useHistory } from 'react-router-dom';
 
 
 const CourseCard = ({ course }) => {
-  const history = useHistory();
-  const handleButtonClick = (id) => {
-    history.push(`/courseDetails/${id}`); // Replace with the desired path and ID parameter
-  };
+  const [goToCourses, setGoToCourses] = useState(false);
 
+  if (goToCourses) {
+    return <Navigate to={`/courseDetails/${course.id}`} />;
+  }
   const source = `/assets/img/${course.image}`;
 
   return (
-    <div key={course.index} className="courses" onClick={() => handleButtonClick(course.id)}>
+    <div key={course.index} className="courses" onClick={() => setGoToCourses(true)}>
       <img src={source} alt="" />
       <div className="details">
         <span>{course.duration}</span>

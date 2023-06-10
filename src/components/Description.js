@@ -32,8 +32,6 @@ const Description = ({id}) => {
     };
     return (
         <>
-        
-    <nav></nav>
     <section id="course-inner">
       <div className="overview">
         <img className="course-img" src={image} alt="" />
