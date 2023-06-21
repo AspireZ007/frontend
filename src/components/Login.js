@@ -1,31 +1,72 @@
-import React, { useState } from "react";
-import "../CSS/Login.css";
+import React, { useState } from "react"
+import "../CSS/Login.css"
+import axios from "axios"
+
+const baseURL = "http://localhost:3000"
 
 const Login = () => {
-  const [isSignUpMode, setIsSignUpMode] = useState(false);
+  const [isSignUpMode, setIsSignUpMode] = useState(false)
 
   const handleSignUpClick = () => {
-    setIsSignUpMode(true);
-  };
+    setIsSignUpMode(true)
+  }
 
   const handleSignInClick = () => {
-    setIsSignUpMode(false);
-  };
+    setIsSignUpMode(false)
+  }
+
+  /**
+   * 
+   * @param {event} event - event object upon form submission
+   * @returns {void}
+   * @description - handles login form submission and sends a post request to the server
+   *              - will display a warning message if the login is unsuccessful
+   *              - will display a success message if the login is successful
+   * @todo - redirect to the dashboard upon successful login
+   */
+  const handleLogin = (event) => {
+
+    // prevent the default form submission behaviour
+    event.preventDefault()
+
+    // get the form data
+    const formData = new FormData(event.target)
+    const data = Object.fromEntries(formData.entries())
+
+    // text for displaying acknowledgement message
+    const warning = document.getElementById("warning-message")
+    warning.innerHTML = ""
+
+    axios
+    // send a post request to the server
+    .post(process.env.REACT_APP_BASE_URL + "/auth/login", data)
+      .then((response) => {
+        warning.innerHTML = response.data.message
+        warning.style.color = "green"
+      })
+      .catch((error) =>{
+        warning.innerHTML = error.response.data.message
+        warning.style.color = "red"
+      }
+      )
+  }
+
 
   return (
     <div className="Loginn">
       <div className={`login-container ${isSignUpMode ? "sign-up-mode" : ""}`}>
         <div className="forms-container">
           <div className="signin-signup">
-            <form action="#" className="sign-in-form">
+            <form action="#" onSubmit={handleLogin} className="sign-in-form">
               <h2 className="title">Sign in</h2>
+              <label className="warning" id="warning-message"></label>
               <div className="input-field">
                 <i className="fas fa-user" />
-                <input type="text" placeholder="Email" />
+                <input type="text" name="email" placeholder="Email" />
               </div>
               <div className="input-field">
                 <i className="fas fa-lock" />
-                <input type="password" placeholder="Password" />
+                <input type="password" name="password" placeholder="Password" />
               </div>
               <input type="submit" defaultValue="Login" className="btn solid" />
             </form>
@@ -101,7 +142,7 @@ const Login = () => {
                 href="learnmore.html"
                 style={{ color: "whitesmoke", fontSize: "small" }}
               >
-                <br/>
+                <br />
                 Learn More
               </a>
             </div>
@@ -109,7 +150,7 @@ const Login = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login
