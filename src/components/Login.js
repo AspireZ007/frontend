@@ -16,7 +16,7 @@ const Login = () => {
   }
 
   /**
-   * 
+   *
    * @param {event} event - event object upon form submission
    * @returns {void}
    * @description - handles login form submission and sends a post request to the server
@@ -25,7 +25,6 @@ const Login = () => {
    * @todo - redirect to the dashboard upon successful login
    */
   const handleLogin = (event) => {
-
     // prevent the default form submission behaviour
     event.preventDefault()
 
@@ -34,23 +33,47 @@ const Login = () => {
     const data = Object.fromEntries(formData.entries())
 
     // text for displaying acknowledgement message
-    const warning = document.getElementById("warning-message")
+    const warning = document.getElementById("warning-message-login")
     warning.innerHTML = ""
 
     axios
-    // send a post request to the server
-    .post(process.env.REACT_APP_BASE_URL + "/auth/login", data)
+      // send a post request to the server
+      .post(process.env.REACT_APP_BASE_URL + "/auth/login", data)
       .then((response) => {
         warning.innerHTML = response.data.message
         warning.style.color = "green"
       })
-      .catch((error) =>{
-        warning.innerHTML = error.response.data.message
+      .catch((error) => {
+        warning.innerHTML = (!error.response.data.message) ? "Something went wrong" : error.response.data.message
         warning.style.color = "red"
-      }
-      )
+      })
   }
 
+  const handleSingup = (event) => {
+    // prevent the default form submission behaviour
+    event.preventDefault()
+
+    // get the form data
+    const formData = new FormData(event.target)
+    const data = Object.fromEntries(formData.entries())
+
+    // text for displaying acknowledgement message
+    const warning = document.getElementById("warning-message-signup")
+    warning.innerHTML = ""
+
+    axios
+      // send a post request to the server
+      .post(process.env.REACT_APP_BASE_URL + "/auth/signup", data)
+      .then((response) => {
+        console.log(response)
+        warning.innerHTML = response.data.data
+        warning.style.color = "green"
+      })
+      .catch((error) => {
+        warning.innerHTML = (!error.response.data.error) ? "Something went wrong" : error.response.data.error
+        warning.style.color = "red"
+      })
+    }
 
   return (
     <div className="Loginn">
@@ -59,45 +82,48 @@ const Login = () => {
           <div className="signin-signup">
             <form action="#" onSubmit={handleLogin} className="sign-in-form">
               <h2 className="title">Sign in</h2>
-              <label className="warning" id="warning-message"></label>
+              <label className="warning" id="warning-message-login"></label>
               <div className="input-field">
                 <i className="fas fa-user" />
-                <input type="text" name="email" placeholder="Email" />
+                <input type="text"  name="email" placeholder="Email" />
               </div>
               <div className="input-field">
                 <i className="fas fa-lock" />
-                <input type="password" name="password" placeholder="Password" />
+                <input type="password"  name="password" placeholder="Password" />
               </div>
               <input type="submit" defaultValue="Login" className="btn solid" />
             </form>
-            <form action="#" className="sign-up-form">
+
+            <form action="#" onSubmit={handleSingup} className="sign-up-form">
               <h2 className="title">Sign up</h2>
+              <label className="warning" id="warning-message-signup"></label>
               <div className="input-field">
                 <i className="fas fa-user" />
-                <input type="text" placeholder="Name" />
+                <input type="text"  name="name" placeholder="Name" />
               </div>
               <div className="input-field">
                 <i className="fas fa-user" />
-                <input type="text" placeholder="Username" />
+                <input type="text"  name="username" placeholder="Username" />
               </div>
               <div className="input-field">
                 <i className="fas fa-envelope" />
-                <input type="email" placeholder="Email" />
+                <input type="email"  name="email" placeholder="Email" />
               </div>
               <div className="input-field">
                 <i className="fas fa-regular fa-graduation-cap" />
-                <input type="text" placeholder="College" />
+                <input type="text"  name="college" placeholder="College" />
               </div>
               <div className="input-field">
                 <i className="fas fa-lock" />
-                <input type="password" placeholder="Password" />
+                <input type="password"  name="password" placeholder="Password" />
               </div>
               <div className="input-field">
                 <i className="fas fa-lock" />
-                <input type="password" placeholder="Confirm Password" />
+                <input type="password"  name="confirmPassword" placeholder="Confirm Password" />
               </div>
               <input type="submit" className="btn" defaultValue="Sign up" />
             </form>
+
           </div>
         </div>
 
@@ -152,5 +178,4 @@ const Login = () => {
     </div>
   )
 }
-
 export default Login
